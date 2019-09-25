@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <select>
+            <option value="1">1</option>
+            <option value="2" selected="selected">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+<script>
+    String.prototype.format=function (kwargs) {
+        var result=this.replace(/\{(\w+)\}/g,function (km,m) {
+            return kwargs[m];
+        });
+        return result;
+    };
+    var s='{n}-{m}';
+    var d={'n':'xxxxx','m':'oooooo'};
+    var ret=s.format(d);
+    console.log(ret);
+</script>
+</body>
+</html>
